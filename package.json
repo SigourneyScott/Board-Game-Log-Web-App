@@ -1,0 +1,22 @@
+{
+  "name": "csc-437-class-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SigourneyScott/CSC-437-Class-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SigourneyScott/CSC-437-Class-Project/issues"
+  },
+  "homepage": "https://github.com/SigourneyScott/CSC-437-Class-Project#readme",
+  "description": "",
+  "workspaces": [
+    "packages/*"
+  ]
+}
