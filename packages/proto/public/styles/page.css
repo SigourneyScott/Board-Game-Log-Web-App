@@ -50,14 +50,6 @@ img {
     max-width: 100%;
 }
 
-svg.icon {
-    display: inline;
-    height: 1.5em;
-    width: 1.5em;
-    vertical-align: top;
-    fill: currentColor;
-}
-
 .navbar {
     background: var(--color-background-card);
     display: flex;
@@ -72,6 +64,21 @@ svg.icon {
 .card {
     background: var(--color-background-card);
     border-radius: 10px;
+}
+
+/*Icons*/
+
+svg.icon {
+    display: inline;
+    height: 1.5em;
+    width: 1.5em;
+    vertical-align: top;
+    fill: currentColor;
+}
+
+.trophy.icon {
+    color: #ffc048;
+    position: absolute;
 }
 
 /*Index Page*/
@@ -164,6 +171,7 @@ svg.icon {
     font-size: 20px;
     margin-bottom: 15px;
     padding: 10px;
+    position: relative;
 }
 
 .player {
