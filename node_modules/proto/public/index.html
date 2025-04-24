@@ -1,20 +1,97 @@
-<style>
-    ul {
-        list-style-type: none;
-    }
-</style>
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
 
-<html>
-    <head>
-        <title>Username</title>
-    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Solway:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+    <meta charset="utf-8" />
+
+    <title>User123</title>
+</head>
 
     <body>
-        <h1>User123</h1>
-        <ul>
-            <li><a href="session1.html">Werewolf - 4/7/2025</a></li>
-            <li><a href="session2.html">Marvel Champions - 3/14/2025</a></li>
-            <li><a href="session3.html">Sushi Go - 3/12/2025</a></li>
-        </ul>
+        <div class="page">
+            <div class="navbar">
+                <!-- style="position: fixed; top: 0;"-->
+                <h1>User123</h1>
+                <!--<h1>list grid</h1>-->
+                <h1>
+                    <svg class="icon">
+                        <use href="/icons/menu.svg#icon-list" />
+                    </svg>
+                    <svg class="icon">
+                        <use href="/icons/menu.svg#icon-grid" />
+                    </svg>
+                </h1>
+                
+            </div>
+
+            <!--Sessions-->
+            <div class="grid">
+                <a href="session1.html">
+                    <div class="sessionCard card">
+                        <div class="sessionCardImg">
+                            <img src="https://cf.geekdo-images.com/dbKLvMw--0rTKU5ShvZ79A__imagepage/img/eIDYVgitCn_YJNsAFvoRx_zHtwo=/fit-in/900x600/filters:no_upscale():strip_icc()/pic2453810.jpg" />
+                        </div>
+                        <div class="sessionCardHeader">
+                            <div>Werewolf</div>
+                            <div>4/7/2025</div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="session2.html">
+                    <div class="sessionCard card">
+                        <div class="sessionCardImg">
+                            <img src="https://cf.geekdo-images.com/kRvUgYiaOq07kC67ZK5UoQ__imagepage/img/ifaw5M-Z2eEFir0ImkbNzxMbaOk=/fit-in/900x600/filters:no_upscale():strip_icc()/pic4900321.jpg" />
+                        </div>
+
+                        <div class="sessionCardHeader">
+                            <div>
+                                Marvel Champions
+                                <svg class="icon" style="color: #ffc048">
+                                    <use href="/icons/menu.svg#icon-crown" />
+                                </svg>
+                            </div>
+                            <div>3/14/2025</div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="session3.html">
+                    <div class="sessionCard card">
+                        <div class="sessionCardImg">
+                            <img src="https://cf.geekdo-images.com/Fn3PSPZVxa3YurlorITQ1Q__imagepage/img/qD1BnVr1_QYh9Dwr2G6eXVqTdBs=/fit-in/900x600/filters:no_upscale():strip_icc()/pic1900075.jpg" />
+                        </div>
+                        <div class="sessionCardHeader">
+                            <div>
+                                Sushi Go
+                                <svg class="icon" style="color: #ffc048">
+                                    <use href="/icons/menu.svg#icon-crown" />
+                                </svg>
+                            </div>
+                            <div>3/12/2025</div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="session3.html">
+                    <div class="sessionCard card">
+                        <div class="sessionCardImg">
+                            <img src="https://cf.geekdo-images.com/Fn3PSPZVxa3YurlorITQ1Q__imagepage/img/qD1BnVr1_QYh9Dwr2G6eXVqTdBs=/fit-in/900x600/filters:no_upscale():strip_icc()/pic1900075.jpg" />
+                        </div>
+                        <div class="sessionCardHeader">
+                            <div>Sushi Go</div>
+                            <div>3/12/2025</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
     </body>
 </html>

@@ -1,34 +1,51 @@
-<style>
-    ul {
-        list-style-type: none;
-    }
-    .box {
-        display: flex;
-        justify-content: space-between;
-    }
-</style>
+<!doctype html>
+<html lang="en">
 
-<html>
+<head>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
 
-    <head>
-	    <title>Sushi Go</title> <!--Tab Title-->
-    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Solway:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
-    <body>
-        <h1><a href="index.html">User123</a></h1>
+    <meta charset="utf-8" />
 
-        <!--Session Info-->
-        <div class="box">
-            <div><h1>Sushi Go</h1></div>
-            <div><h1>3/12/2025</h1></div>
+    <title>Sushi Go</title> <!--Tab Title-->
+</head>
+
+<!--https://boardgamegeek.com/image/1900075/sushi-go-->
+
+<body>
+    <div class="page">
+        <div class="navbar">
+            <h1><a href="index.html">User123</a></h1>
         </div>
 
-        <!--Team Info-->
-        <ul>
-            <li>Sigourney - 5</li>
-            <li>Aaron - 11</li>
-            <li>Anne - 21</li>
-        </ul>
-    </body>
+        <div class="sessionContent">
+            <!--Session Info-->
+            <div class="gameInfo card">
+                <div class="gameHeader">
+                    <h1>Sushi Go</h1>
+                    <h1>3/12/2025</h1>
+                </div>
+                <div class="gameImg"><img src="https://cf.geekdo-images.com/Fn3PSPZVxa3YurlorITQ1Q__imagepage/img/qD1BnVr1_QYh9Dwr2G6eXVqTdBs=/fit-in/900x600/filters:no_upscale():strip_icc()/pic1900075.jpg" /></div>
+            </div>
+
+            <!--Team Info-->
+            <div class="teamInfo">
+                <div class="team card">
+                    <div class="player">Sigourney - 5</div>
+                </div>
+                <div class="team card">
+                    <div class="player">Aaron - 11</div>
+                </div>
+                <div class="team card">
+                    <div class="player">Anne - 21</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
 </html>
