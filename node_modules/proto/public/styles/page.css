@@ -33,6 +33,7 @@ h2 {
     margin-bottom: 10px;
     color: var(--color-accent2);
     font-family: var(--font-header);
+    font-size: 25px;
 }
 
 h1 {
@@ -64,6 +65,8 @@ img {
 .card {
     background: var(--color-background-card);
     border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
 }
 
 /*Icons*/
@@ -91,8 +94,6 @@ svg.icon {
 
 .sessionCard {
     height: 300px;
-    margin: 20px;
-    padding: 15px;
     font-size: 1.5em;
     position: relative;
     overflow: hidden;
@@ -131,15 +132,12 @@ svg.icon {
 .sessionContent {
     display: flex;
     justify-content: space-between;
-    flex: 1 1 100%;
+    flex-basis: 100%;
     overflow: auto;
 }
 
 .gameInfo {
-    margin: 10px;
-    padding: 15px;
-
-    flex: 1 1 40%;
+    flex: 0 0 40%;
 
     display: flex;
     flex-direction: column;
@@ -159,19 +157,28 @@ svg.icon {
     margin-top: 15px;
 }
 
+.details {
+    flex: 0 0 60%;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
 .teamInfo {
-    flex-basis: 60%;
-    overflow: scroll;
-    margin: 10px;
+    display: flex;
+    flex: 0 0 auto;
+    overflow: scroll visible;
 }
 
 .team {
     background: var(--color-background-card);
     text-align: center;
-    font-size: 20px;
-    margin-bottom: 15px;
-    padding: 10px;
     position: relative;
+}
+
+.notes {
+    flex-basis: 100%;
 }
 
 .player {
