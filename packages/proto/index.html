@@ -17,25 +17,19 @@
         <script type="module">
             import { define } from "@calpoly/mustang";
             import { DarkModeToggleElement } from "./src/darkmodeToggle.ts";
-            /*document.body.addEventListener("dark-mode:toggle", (event) => { document.body.classList.toggle("darkmode"); });*/
+            import { SessionElement } from "./src/session.ts";
             define({
                 "dark-mode-toggle": DarkModeToggleElement,
+                "session-tile": SessionElement,
             });
 
             DarkModeToggleElement.initializeOnce();
-            /*document.body.addEventListener("change", (event) => { event.currentTarget.classList.toggle("darkmode"); })*/
         </script>
 
         <div class="page">
             <div class="navbar">
                 <h1>User123</h1>
                 <h1>
-                    <!--<label onchange="">
-                        <input type="checkbox" autocomplete="off" style="visibility: hidden;"/>
-                        <svg class="icon">
-                            <use href="/icons/menu.svg#icon-dark-mode" />
-                        </svg>
-                    </label>-->
                     <dark-mode-toggle></dark-mode-toggle>
                     <svg class="icon">
                         <use href="/icons/menu.svg#icon-list" />
@@ -49,69 +43,44 @@
 
             <!--Sessions-->
             <div class="grid">
-                <a href="session1.html">
-                    <div class="sessionCard card">
-                        <div class="sessionCardImg">
-                            <img src="https://cf.geekdo-images.com/dbKLvMw--0rTKU5ShvZ79A__imagepage/img/eIDYVgitCn_YJNsAFvoRx_zHtwo=/fit-in/900x600/filters:no_upscale():strip_icc()/pic2453810.jpg" />
-                        </div>
-                        <div class="sessionCardHeader">
-                            <div>Werewolf</div>
-                            <div>4/7/2025</div>
-                        </div>
-                    </div>
-                </a>
+                <session-tile session-link="session1.html"
+                              img-src="https://cf.geekdo-images.com/dbKLvMw--0rTKU5ShvZ79A__imagepage/img/eIDYVgitCn_YJNsAFvoRx_zHtwo=/fit-in/900x600/filters:no_upscale():strip_icc()/pic2453810.jpg"
+                              game="Werewolf"
+                              date="4/7/2025">
+                </session-tile>
 
-                <a href="session2.html">
-                    <div class="sessionCard card">
-                        <div class="sessionCardImg">
-                            <img src="https://cf.geekdo-images.com/kRvUgYiaOq07kC67ZK5UoQ__imagepage/img/ifaw5M-Z2eEFir0ImkbNzxMbaOk=/fit-in/900x600/filters:no_upscale():strip_icc()/pic4900321.jpg" />
-                        </div>
+                <session-tile session-link="session2.html"
+                              img-src="https://cf.geekdo-images.com/kRvUgYiaOq07kC67ZK5UoQ__imagepage/img/ifaw5M-Z2eEFir0ImkbNzxMbaOk=/fit-in/900x600/filters:no_upscale():strip_icc()/pic4900321.jpg"
+                              game="Marvel Champions"
+                              date="3/14/2025">
+                    <span slot="icon">
+                        <svg class="icon" style="color: #ffc048">
+                            <use href="/icons/menu.svg#icon-crown" />
+                        </svg>
+                    </span>
+                </session-tile>
 
-                        <div class="sessionCardHeader">
-                            <div>
-                                Marvel Champions
-                                <svg class="icon" style="color: #ffc048">
-                                    <use href="/icons/menu.svg#icon-crown" />
-                                </svg>
-                            </div>
-                            <div>3/14/2025</div>
-                        </div>
-                    </div>
-                </a>
+                <session-tile session-link="session3.html"
+                              img-src="https://cf.geekdo-images.com/jtY5uHQ717JlyqDfxCj7uA__imagepage/img/t2rA7BYW95zNtOSuT1jMhRCbG1c=/fit-in/900x600/filters:no_upscale():strip_icc()/pic5422907.png"
+                              game="Gudetama"
+                              date="3/12/2025">
+                    <span slot="icon">
+                        <svg class="icon" style="color: #ffc048">
+                            <use href="/icons/menu.svg#icon-crown" />
+                        </svg>
+                    </span>
+                </session-tile>
 
-                <a href="session3.html">
-                    <div class="sessionCard card">
-                        <div class="sessionCardImg">
-                            <img src="https://cf.geekdo-images.com/jtY5uHQ717JlyqDfxCj7uA__imagepage/img/t2rA7BYW95zNtOSuT1jMhRCbG1c=/fit-in/900x600/filters:no_upscale():strip_icc()/pic5422907.png" />
-                        </div>
-                        <div class="sessionCardHeader">
-                            <div>
-                                Gudetama
-                                <svg class="icon" style="color: #ffc048">
-                                    <use href="/icons/menu.svg#icon-crown" />
-                                </svg>
-                            </div>
-                            <div>3/12/2025</div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="session3.html">
-                    <div class="sessionCard card">
-                        <div class="sessionCardImg">
-                            <img src="https://cf.geekdo-images.com/jtY5uHQ717JlyqDfxCj7uA__imagepage/img/t2rA7BYW95zNtOSuT1jMhRCbG1c=/fit-in/900x600/filters:no_upscale():strip_icc()/pic5422907.png" />
-                        </div>
-                        <div class="sessionCardHeader">
-                            <div>
-                                Gudetama
-                                <svg class="icon" style="color: #ffc048">
-                                    <use href="/icons/menu.svg#icon-crown" />
-                                </svg>
-                            </div>
-                            <div>3/12/2025</div>
-                        </div>
-                    </div>
-                </a>
+                <session-tile session-link="session3.html"
+                              img-src="https://cf.geekdo-images.com/jtY5uHQ717JlyqDfxCj7uA__imagepage/img/t2rA7BYW95zNtOSuT1jMhRCbG1c=/fit-in/900x600/filters:no_upscale():strip_icc()/pic5422907.png"
+                              game="Gudetama"
+                              date="3/12/2025">
+                    <span slot="icon">
+                        <svg class="icon" style="color: #ffc048">
+                            <use href="/icons/menu.svg#icon-crown" />
+                        </svg>
+                    </span>
+                </session-tile>
             </div>
         </div>
         

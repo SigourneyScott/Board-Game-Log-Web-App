@@ -1,6 +1,4 @@
 import {
-    define,
-    Dropdown,
     Events
 } from "@calpoly/mustang";
 import { css, html, LitElement } from "lit";
