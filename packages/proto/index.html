@@ -15,7 +15,14 @@
 
     <body>
         <script type="module">
-            import { DarkModeToggleElement } from "/scripts/darkmodeToggle.js";
+            import { define } from "@calpoly/mustang";
+            import { DarkModeToggleElement } from "./src/darkmodeToggle.ts";
+            /*document.body.addEventListener("dark-mode:toggle", (event) => { document.body.classList.toggle("darkmode"); });*/
+            define({
+                "dark-mode-toggle": DarkModeToggleElement,
+            });
+
+            DarkModeToggleElement.initializeOnce();
             /*document.body.addEventListener("change", (event) => { event.currentTarget.classList.toggle("darkmode"); })*/
         </script>
 
