@@ -1,31 +1,31 @@
-/*Dark Theme*/
 :root {
-    --color-background-page: #121212;
-    --color-background-card: #282828;
-    --color-text: #FFF;
-    --color-accent1: #E66B55;
+    --color-background-page: #A7E8D8; /*Tiffany Blue*/
+    --color-background-card: #FFF; /*White*/
+    --color-text: #000; /*Black*/
+    --color-accent1: #E66B55; /**/
     --color-accent2: #F08D78;
     --color-accent6: #fbbeb0;
-
+    --color-shadow: #585858; /*Dim Gray*/
+    /*#2CA58D Zomp*/
     --font-header: "Lilita One", Arial Black, sans-serif;
     --font-body: "Solway", Georgia, serif;
 }
-
-/*Light theme*/
-/*:root {
-    --color-background-page: #E0D3DE;
-    --color-background-card: #FFF;
-    --color-text: #000;
-    --color-accent1: #E66B55;
-    --color-accent2: #F08D78;
-    --color-accent6: #fbbeb0;
-}*/
 
 body {
     background: var(--color-background-page);
     color: var(--color-text);
     font-family: var(--font-body);
     font-weight: 400;
+}
+
+body.darkmode {
+    --color-background-page: #121212;
+    --color-background-card: #282828;
+    --color-text: #FFF;
+    --color-accent1: #E66B55;
+    --color-accent2: #F08D78;
+    --color-accent6: #fbbeb0;
+    --color-shadow: #000;
 }
 
 h2 {
@@ -56,7 +56,7 @@ img {
     display: flex;
     justify-content: space-between;
     padding: 15px;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
     width: 100%;
     box-sizing: border-box;
     flex-basis: auto;
@@ -97,6 +97,7 @@ svg.icon {
     font-size: 1.5em;
     position: relative;
     overflow: hidden;
+    box-shadow: 0px 0px 5px var(--color-shadow);
 }
 
 .sessionCardImg {
@@ -133,11 +134,12 @@ svg.icon {
     display: flex;
     justify-content: space-between;
     flex-basis: 100%;
-    overflow: auto;
+    overflow: hidden;
+    width: 100vw;
 }
 
 .gameInfo {
-    flex: 0 0 40%;
+    flex: 0 1 25em;
 
     display: flex;
     flex-direction: column;
@@ -158,11 +160,12 @@ svg.icon {
 }
 
 .details {
-    flex: 0 0 60%;
+    flex: 0 1 100%;
     overflow: hidden;
 
     display: flex;
     flex-direction: column;
+
 }
 
 .teamInfo {

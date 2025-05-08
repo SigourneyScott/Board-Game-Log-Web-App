@@ -1,0 +1,21 @@
+﻿/*Dark Theme*/
+:root {
+    --color-background-page: #121212;
+    --color-background-card: #282828;
+    --color-text: #FFF;
+    --color-accent1: #E66B55;
+    --color-accent2: #F08D78;
+    --color-accent6: #fbbeb0;
+    --font-header: "Lilita One", Arial Black, sans-serif;
+    --font-body: "Solway", Georgia, serif;
+}
+
+/*Light theme*/
+/*:root {
+    --color-background-page: #E0D3DE;
+    --color-background-card: #FFF;
+    --color-text: #000;
+    --color-accent1: #E66B55;
+    --color-accent2: #F08D78;
+    --color-accent6: #fbbeb0;
+}*/

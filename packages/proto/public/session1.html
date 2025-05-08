@@ -15,9 +15,21 @@
 </head>
 
     <body>
+        <script>
+            document.body.addEventListener("change", (event) => { event.currentTarget.classList.toggle("darkmode"); })
+        </script>
+
         <div class="page">
             <div class="navbar">
                 <h1><a href="index.html">User123</a></h1>
+                <h1>
+                    <label>
+                        <input type="checkbox" autocomplete="off" style="visibility: hidden;" />
+                        <svg class="icon">
+                            <use href="/icons/menu.svg#icon-dark-mode" />
+                        </svg>
+                    </label>
+                </h1>
             </div>
 
             <div class="sessionContent">

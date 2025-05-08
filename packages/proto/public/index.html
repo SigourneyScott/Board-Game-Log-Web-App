@@ -1,25 +1,35 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="/styles/reset.css" />
-    <link rel="stylesheet" href="/styles/page.css" />
+    <head>
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/page.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Solway:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Solway:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
-    <meta charset="utf-8" />
+        <meta charset="utf-8" />
 
-    <title>User123</title>
-</head>
+        <title>User123</title>
+    </head>
 
     <body>
+        <script type="module">
+            import { DarkModeToggleElement } from "/scripts/darkmodeToggle.js";
+            /*document.body.addEventListener("change", (event) => { event.currentTarget.classList.toggle("darkmode"); })*/
+        </script>
+
         <div class="page">
             <div class="navbar">
-                <!-- style="position: fixed; top: 0;"-->
                 <h1>User123</h1>
-                <!--<h1>list grid</h1>-->
                 <h1>
+                    <!--<label onchange="">
+                        <input type="checkbox" autocomplete="off" style="visibility: hidden;"/>
+                        <svg class="icon">
+                            <use href="/icons/menu.svg#icon-dark-mode" />
+                        </svg>
+                    </label>-->
+                    <dark-mode-toggle></dark-mode-toggle>
                     <svg class="icon">
                         <use href="/icons/menu.svg#icon-list" />
                     </svg>
