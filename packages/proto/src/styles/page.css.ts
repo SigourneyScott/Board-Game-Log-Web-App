@@ -30,6 +30,19 @@ const styles = css`
         padding: 15px;
         margin: 10px;
     }
+
+    svg.icon {
+        display: inline;
+        height: 1.5em;
+        width: 1.5em;
+        vertical-align: top;
+        fill: currentColor;
+    }
+
+    .trophy.icon {
+        color: #ffc048;
+        position: absolute;
+    }
 `;
 
 export default { styles };

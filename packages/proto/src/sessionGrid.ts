@@ -4,6 +4,7 @@ import { define } from "@calpoly/mustang";
 import { Session } from "./models/sessionGrid.ts"
 import { SessionElement } from "./session.ts";
 import reset from "./styles/reset.css.ts";
+import page from "./styles/page.css.ts";
 
 export class SessionGridElement extends LitElement {
     static uses = define({
@@ -26,8 +27,14 @@ export class SessionGridElement extends LitElement {
                     img-src=${s.imgSrc}
                     game=${s.game}
                     date=${s.date}>
+                    ${s.sym ? html`
+                        <svg class="icon trophy" slot="icon">
+                            <use href="/icons/menu.svg#icon-crown"/>
+                        </svg>
+                    ` : ""}
                 </session-tile>`
         }
+        
 
         return html`
             <div class="grid">
@@ -40,6 +47,7 @@ export class SessionGridElement extends LitElement {
 
     static styles = [
         reset.styles,
+        page.styles,
         css`
             .grid {
                 display: grid;
