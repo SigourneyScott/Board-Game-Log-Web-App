@@ -1,12 +1,19 @@
 import express, { Request, Response } from "express";
 import { connect } from "./services/mongo";
 import Sessions from "./services/session-svc";
+import sessions from "./routes/sessions";
 
 connect("games");
 
 const app = express();
 const port = process.env.PORT || 3000;
 const staticDir = process.env.STATIC || "public";
+
+app.use(express.static(staticDir));
+
+app.use(express.json());
+
+app.use("/api/sessions", sessions);
 
 app.get("/session/:_id", (req: Request, res: Response) => {
     const { _id } = req.params;
@@ -19,8 +26,6 @@ app.get("/session/:_id", (req: Request, res: Response) => {
             .status(404).send();
     });
 });
-
-app.use(express.static(staticDir));
 
 app.get("/hello", (req: Request, res: Response) => {
     res.send("Hello, World");
