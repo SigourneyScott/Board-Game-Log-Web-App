@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import { connect } from "./services/mongo";
 import Sessions from "./services/session-svc";
 import sessions from "./routes/sessions";
+import auth, { authenticateUser } from "./routes/auth";
 
 connect("games");
 
@@ -13,7 +14,9 @@ app.use(express.static(staticDir));
 
 app.use(express.json());
 
-app.use("/api/sessions", sessions);
+app.use("/api/sessions", authenticateUser, sessions);
+
+app.use("/auth", auth);
 
 app.get("/session/:_id", (req: Request, res: Response) => {
     const { _id } = req.params;

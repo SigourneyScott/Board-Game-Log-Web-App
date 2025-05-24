@@ -25,13 +25,15 @@ var import_express = __toESM(require("express"));
 var import_mongo = require("./services/mongo");
 var import_session_svc = __toESM(require("./services/session-svc"));
 var import_sessions = __toESM(require("./routes/sessions"));
+var import_auth = __toESM(require("./routes/auth"));
 (0, import_mongo.connect)("games");
 const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
 const staticDir = process.env.STATIC || "public";
 app.use(import_express.default.static(staticDir));
 app.use(import_express.default.json());
-app.use("/api/sessions", import_sessions.default);
+app.use("/api/sessions", import_auth.authenticateUser, import_sessions.default);
+app.use("/auth", import_auth.default);
 app.get("/session/:_id", (req, res) => {
   const { _id } = req.params;
   import_session_svc.default.get(_id).then((data) => {

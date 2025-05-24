@@ -3,7 +3,7 @@ import { property } from "lit/decorators.js";
 import reset from "./styles/reset.css.ts";
 import page from "./styles/page.css.ts";
 
-export class SessionElement extends LitElement {
+export class SessionTileElement extends LitElement {
     @property({ attribute: "session-link" })
     sessionLink?: string;
 

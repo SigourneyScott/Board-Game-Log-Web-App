@@ -11,29 +11,18 @@
         <meta charset="utf-8" />
 
         <title>User123</title>
-      <script type="module" crossorigin src="/assets/index-ZwyT3dCB.js"></script>
+      <script type="module" crossorigin src="/assets/main-BkEQtPwy.js"></script>
+      <link rel="modulepreload" crossorigin href="/assets/state-bsK0PZAq.js">
     </head>
 
     <body>
 
-        <div class="page">
-            <div class="navbar">
-                <h1>User123</h1>
-                <h1>
-                    <dark-mode-toggle></dark-mode-toggle>
-                    <svg class="icon">
-                        <use href="/icons/menu.svg#icon-list" />
-                    </svg>
-                    <svg class="icon">
-                        <use href="/icons/menu.svg#icon-grid" />
-                    </svg>
-                </h1>
-                
-            </div>
+        <mu-auth provides="games:auth">
+            <div class="page">
+                <page-header></page-header>
 
-            <!--Sessions-->
-            <session-grid src="/data/sessionGrid.json"></session-grid>
-        </div>
-        
+                <session-grid src="/api/sessions"></session-grid>
+            </div>
+        </mu-auth>
     </body>
 </html>

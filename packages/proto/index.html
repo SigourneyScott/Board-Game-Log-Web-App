@@ -15,35 +15,26 @@
 
     <body>
         <script type="module">
-            import { define } from "@calpoly/mustang";
+            import { define, Auth } from "@calpoly/mustang";
             import { DarkModeToggleElement } from "./src/darkmodeToggle.ts";
-            import { SessionGridElement } from "./src/SessionGrid.ts"
+            import { SessionGridElement } from "./src/sessionGrid.ts"
+            import { HeaderElement } from "./src/header.ts"
             define({
                 "dark-mode-toggle": DarkModeToggleElement,
-                "session-grid": SessionGridElement
+                "session-grid": SessionGridElement,
+                "page-header": HeaderElement,
+                "mu-auth": Auth.Provider
             });
 
             DarkModeToggleElement.initializeOnce();
         </script>
 
-        <div class="page">
-            <div class="navbar">
-                <h1>User123</h1>
-                <h1>
-                    <dark-mode-toggle></dark-mode-toggle>
-                    <svg class="icon">
-                        <use href="/icons/menu.svg#icon-list" />
-                    </svg>
-                    <svg class="icon">
-                        <use href="/icons/menu.svg#icon-grid" />
-                    </svg>
-                </h1>
-                
-            </div>
+        <mu-auth provides="games:auth">
+            <div class="page">
+                <page-header></page-header>
 
-            <!--Sessions-->
-            <session-grid src="/data/sessionGrid.json"></session-grid>
-        </div>
-        
+                <session-grid src="/api/sessions"></session-grid>
+            </div>
+        </mu-auth>
     </body>
 </html>
