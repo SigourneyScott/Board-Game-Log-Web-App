@@ -3,6 +3,8 @@ import { connect } from "./services/mongo";
 import Sessions from "./services/session-svc";
 import sessions from "./routes/sessions";
 import auth, { authenticateUser } from "./routes/auth";
+import fs from "node:fs/promises";
+import path from "path";
 
 connect("games");
 
@@ -18,6 +20,13 @@ app.use("/api/sessions", authenticateUser, sessions);
 
 app.use("/auth", auth);
 
+app.use("/app", (req: Request, res: Response) => {
+    const indexHtml = path.resolve(staticDir, "index.html");
+    fs.readFile(indexHtml, { encoding: "utf8" }).then((html) =>
+        res.send(html)
+    );
+});
+
 app.get("/session/:_id", (req: Request, res: Response) => {
     const { _id } = req.params;
 
@@ -28,10 +37,6 @@ app.get("/session/:_id", (req: Request, res: Response) => {
         else res
             .status(404).send();
     });
-});
-
-app.get("/hello", (req: Request, res: Response) => {
-    res.send("Hello, World");
 });
 
 app.listen(port, () => {

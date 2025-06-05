@@ -26,6 +26,8 @@ var import_mongo = require("./services/mongo");
 var import_session_svc = __toESM(require("./services/session-svc"));
 var import_sessions = __toESM(require("./routes/sessions"));
 var import_auth = __toESM(require("./routes/auth"));
+var import_promises = __toESM(require("node:fs/promises"));
+var import_path = __toESM(require("path"));
 (0, import_mongo.connect)("games");
 const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
@@ -34,15 +36,18 @@ app.use(import_express.default.static(staticDir));
 app.use(import_express.default.json());
 app.use("/api/sessions", import_auth.authenticateUser, import_sessions.default);
 app.use("/auth", import_auth.default);
+app.use("/app", (req, res) => {
+  const indexHtml = import_path.default.resolve(staticDir, "index.html");
+  import_promises.default.readFile(indexHtml, { encoding: "utf8" }).then(
+    (html) => res.send(html)
+  );
+});
 app.get("/session/:_id", (req, res) => {
   const { _id } = req.params;
   import_session_svc.default.get(_id).then((data) => {
     if (data) res.set("Content-Type", "application/json").send(JSON.stringify(data));
     else res.status(404).send();
   });
-});
-app.get("/hello", (req, res) => {
-  res.send("Hello, World");
 });
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
