@@ -1,6 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
+  "description": "",
   "main": "dist/index.js",
   "exports": {
     "./models": {
@@ -17,9 +18,12 @@
     "start:proto": "cross-env STATIC=../proto/dist npm run start",
     "check": "tsc --noEmit"
   },
+  "keywords": [
+    "express",
+    "backend"
+  ],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/express": "^5.0.1",

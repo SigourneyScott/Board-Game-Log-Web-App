@@ -1,4 +1,4 @@
-import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_ as B}from"./reset.css-DrUu50tp.js";const A=c`
+import{a as I,i as d,b as y,e as O,x as n,r as u,O as P,d as w,c as b,n as g,V as S,h as B,s as A,_ as L}from"./reset.css-DCB2plq5.js";const N={};function D(o,e,s){switch(console.log("update called"),o[0]){case"sessions/select":console.log("case 1"),F(o[1],s).then(t=>e(r=>({...r,sessions:t})));break;default:const i=o[0];throw new Error(`Unhandled Auth message "${i}"`)}}function F(o,e){return console.log(o.userid),console.log("test1"),fetch("/api/sessions",{headers:I.headers(e)}).then(s=>{if(console.log("fetched"),s.status===200)return console.log("fetch successful"),s.json();console.log("fetch failed")}).then(s=>{if(s)return console.log("got json"),s})}const H=d`
     h2 {
         margin: 0px;
         margin-bottom: 10px;
@@ -41,7 +41,7 @@ import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_
         color: #ffc048;
         position: absolute;
     }
-`,x={styles:A},_=class _ extends u{render(){return o`
+`,x={styles:H},k=class k extends y{render(){return n`
             <label
                 @change=${e=>{var s;return O.relay(e,"dark-mode",{checked:(s=e.target)==null?void 0:s.checked})}}
             >
@@ -50,7 +50,7 @@ import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_
                     <use href="/icons/menu.svg#icon-dark-mode" />
                 </svg>
             </label>
-        `}static initializeOnce(){function e(s,i){s==null||s.classList.toggle("darkmode",i)}document.body.addEventListener("dark-mode",s=>e(s.currentTarget,s.detail.checked))}};_.styles=[g.styles,c`
+        `}static initializeOnce(){function e(s,i){s==null||s.classList.toggle("darkmode",i)}document.body.addEventListener("dark-mode",s=>e(s.currentTarget,s.detail.checked))}};k.styles=[u.styles,d`
             svg {
                 display: inline;
                 height: 1.5em;
@@ -58,7 +58,7 @@ import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_
                 vertical-align: top;
                 fill: currentColor;
             }
-        `];let p=_;var F=Object.defineProperty,z=(n,e,s,i)=>{for(var t=void 0,r=n.length-1,a;r>=0;r--)(a=n[r])&&(t=a(e,s,t)||t);return t&&F(e,s,t),t};const m=class m extends u{constructor(){super(...arguments),this.loggedIn=!1,this._authObserver=new w(this,"games:auth")}render(){return o`
+        `];let v=k;var U=Object.defineProperty,j=(o,e,s,i)=>{for(var t=void 0,r=o.length-1,a;r>=0;r--)(a=o[r])&&(t=a(e,s,t)||t);return t&&U(e,s,t),t};const f=class f extends y{constructor(){super(...arguments),this.loggedIn=!1,this._authObserver=new P(this,"games:auth")}render(){return n`
             <div class="navbar">
                 <h1>
                     <a href="/app">${this.userid}</a>
@@ -75,15 +75,15 @@ import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_
                     </svg>
                 </h1>
             </div>
-        `}connectedCallback(){super.connectedCallback(),this._authObserver.observe(e=>{const{user:s}=e;s&&s.authenticated?(this.loggedIn=!0,this.userid=s.username):(this.loggedIn=!1,this.userid=void 0)})}renderSignOutButton(){return o`
+        `}connectedCallback(){super.connectedCallback(),this._authObserver.observe(e=>{const{user:s}=e;s&&s.authenticated?(this.loggedIn=!0,this.userid=s.username):(this.loggedIn=!1,this.userid=void 0)})}renderSignOutButton(){return n`
             <button
                 @click=${e=>{O.relay(e,"auth:message",["auth/signout"])}}
             >
                 Sign Out
             </button>
-        `}renderSignInButton(){return o`
+        `}renderSignInButton(){return n`
             <a @click=${()=>location.assign("/login.html")}>Sign In</a>
-        `}};m.uses=k({"dark-mode-toggle":p}),m.styles=[g.styles,x.styles,c`
+        `}};f.uses=w({"dark-mode-toggle":v}),f.styles=[u.styles,x.styles,d`
             .navbar {
                 background: var(--color-background-card);
                 display: flex;
@@ -93,7 +93,7 @@ import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_
                 box-sizing: border-box;
                 flex-basis: auto;
             }
-        `];let l=m;z([b()],l.prototype,"loggedIn");z([b()],l.prototype,"userid");var L=Object.defineProperty,$=(n,e,s,i)=>{for(var t=void 0,r=n.length-1,a;r>=0;r--)(a=n[r])&&(t=a(e,s,t)||t);return t&&L(e,s,t),t};const C=class C extends u{render(){return o`
+        `];let l=f;j([b()],l.prototype,"loggedIn");j([b()],l.prototype,"userid");var q=Object.defineProperty,$=(o,e,s,i)=>{for(var t=void 0,r=o.length-1,a;r>=0;r--)(a=o[r])&&(t=a(e,s,t)||t);return t&&q(e,s,t),t};const C=class C extends y{render(){return n`
             <a href="/app/sessions/${this.sessionId}">
                 <div class="sessionCard card">
                     <div class="sessionCardImg">
@@ -109,7 +109,7 @@ import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_
                     </div>
                 </div>
             </a>
-        `}};C.styles=[g.styles,x.styles,c`
+        `}};C.styles=[u.styles,x.styles,d`
             .sessionCard {
                 height: 300px;
                 font-size: 1.5em;
@@ -139,31 +139,31 @@ import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_
                 position: relative;
                 font-family: var(--font-header);
             }
-        `];let d=C;$([v({attribute:"session-id"})],d.prototype,"sessionId");$([v({attribute:"img-src"})],d.prototype,"imgSrc");$([v()],d.prototype,"game");$([v()],d.prototype,"date");var N=Object.defineProperty,H=(n,e,s,i)=>{for(var t=void 0,r=n.length-1,a;r>=0;r--)(a=n[r])&&(t=a(e,s,t)||t);return t&&N(e,s,t),t};const y=class y extends u{constructor(){super(...arguments),this.sessions=[],this._authObserver=new w(this,"games:auth")}get src(){return"/api/sessions"}render(){const{sessions:e}=this;function s(i){return o`
+        `];let c=C;$([g({attribute:"session-id"})],c.prototype,"sessionId");$([g({attribute:"img-src"})],c.prototype,"imgSrc");$([g()],c.prototype,"game");$([g()],c.prototype,"date");var J=Object.defineProperty,K=Object.getOwnPropertyDescriptor,M=(o,e,s,i)=>{for(var t=K(e,s),r=o.length-1,a;r>=0;r--)(a=o[r])&&(t=a(e,s,t)||t);return t&&J(e,s,t),t};const m=class m extends S{get sessions(){return this.model.sessions}constructor(){super("games:model")}render(){const{sessions:e}=this;function s(i){return n`
                 <session-tile
                     session-id=${i._id}
                     img-src=${i.imgSrc}
                     game=${i.game}
                     date=${i.date}>
-                    ${i.sym?o`
+                    ${i.sym?n`
                         <svg class="icon trophy" slot="icon">
                             <use href="/icons/menu.svg#icon-crown"/>
                         </svg>
                     `:""}
-                </session-tile>`}return o`
+                </session-tile>`}return n`
             <div class="grid">
-                ${e.map(s)}
+                ${e?e.map(s):"no sessions"}
             </div>
-        `}connectedCallback(){super.connectedCallback(),this._authObserver.observe(e=>{this._user=e.user,this.src&&this.hydrate(this.src)})}get authorization(){return this._user&&this._user.authenticated?(console.log("authenticated"),{Authorization:`Bearer ${this._user.token}`}):(console.log("failed authentication"),{})}hydrate(e){fetch(e,{headers:this.authorization}).then(s=>{if(s.status!==200)throw`Status: ${s.status}`;return s.json()}).then(s=>{console.log(s);const i=s;this.sessions=i}).catch(s=>console.log(`Failed to render data ${e}:`,s))}};y.uses=k({"session-tile":d}),y.styles=[g.styles,x.styles,c`
+        `}attributeChangedCallback(e,s,i){super.attributeChangedCallback(e,s,i),s!==i&&i&&(console.log("dispatching message"),this.dispatchMessage(["sessions/select",{userid:i}]))}};m.uses=w({"session-tile":c}),m.styles=[u.styles,x.styles,d`
             .grid {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
                 overflow-y: scroll;
             }
-        `];let f=y;H([b()],f.prototype,"sessions");var q=Object.defineProperty,P=(n,e,s,i)=>{for(var t=void 0,r=n.length-1,a;r>=0;r--)(a=n[r])&&(t=a(e,s,t)||t);return t&&q(e,s,t),t};const I=class I extends u{constructor(){super(...arguments),this.sessionid="",this._authObserver=new w(this,"games:auth")}get src(){if(this.sessionid)return`/api/sessions/${this.sessionid}`}render(){const{session:e}=this;function s(t){return o`
+        `];let p=m;M([b()],p.prototype,"sessions");var Q=Object.defineProperty,z=(o,e,s,i)=>{for(var t=void 0,r=o.length-1,a;r>=0;r--)(a=o[r])&&(t=a(e,s,t)||t);return t&&Q(e,s,t),t};const _=class _ extends y{constructor(){super(...arguments),this.sessionid="",this._authObserver=new P(this,"games:auth")}get src(){if(this.sessionid)return`/api/sessions/${this.sessionid}`}render(){const{session:e}=this;function s(t){return n`
                 <div class="team card">
                     <h2>
-                        ${t.winner?o`
+                        ${t.winner?n`
                             <svg class="icon trophy" style = "left: 0;">
                                 <use href="/icons/menu.svg#icon-crown"/>
                             </svg>
@@ -175,7 +175,7 @@ import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_
                     </h2>
                     ${t.playerNames.map(i)}
                 </div>
-            `}function i(t){return o`<div class="player">${t}</div>`}return o`
+            `}function i(t){return n`<div class="player">${t}</div>`}return n`
             <div class="sessionContent">
                 <div class="gameInfo card">
                     <div class="gameHeader">
@@ -195,7 +195,7 @@ import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_
                     </div>
                 </div>
             </div>
-        `}connectedCallback(){super.connectedCallback(),this._authObserver.observe(e=>{this._user=e.user,this.src&&this.hydrate(this.src)})}get authorization(){return this._user&&this._user.authenticated?(console.log("authenticated"),{Authorization:`Bearer ${this._user.token}`}):(console.log("failed authentication"),{})}hydrate(e){fetch(e,{headers:this.authorization}).then(s=>{if(s.status!==200)throw`Status: ${s.status}`;return s.json()}).then(s=>{console.log(s);const i=s;this.session=i}).catch(s=>console.log(`Failed to render data ${e}:`,s))}};I.styles=[g.styles,x.styles,c`
+        `}connectedCallback(){super.connectedCallback(),this._authObserver.observe(e=>{this._user=e.user,this.src&&this.hydrate(this.src)})}get authorization(){return this._user&&this._user.authenticated?(console.log("authenticated"),{Authorization:`Bearer ${this._user.token}`}):(console.log("failed authentication"),{})}hydrate(e){fetch(e,{headers:this.authorization}).then(s=>{if(s.status!==200)throw`Status: ${s.status}`;return s.json()}).then(s=>{console.log(s);const i=s;this.session=i}).catch(s=>console.log(`Failed to render data ${e}:`,s))}};_.styles=[u.styles,x.styles,d`
             .sessionContent {
                 display: flex;
                 justify-content: space-between;
@@ -249,8 +249,8 @@ import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_
             .notes {
                 flex-basis: 100%;
             }
-        `];let h=I;P([v({attribute:"session-id"})],h.prototype,"sessionid");P([b()],h.prototype,"session");const J=[{path:"/app/sessions/:id",view:n=>o`
-            <session-content session-id=${n.id}></session-content>
-        `},{path:"/app",view:()=>o`
+        `];let h=_;z([g({attribute:"session-id"})],h.prototype,"sessionid");z([b()],h.prototype,"session");const R=[{path:"/app/sessions/:id",view:o=>n`
+            <session-content session-id=${o.id}></session-content>
+        `},{path:"/app",view:()=>n`
             <session-grid></sesssion-grid>
-        `},{path:"/",redirect:"/app"}];k({"page-header":l,"session-grid":f,"session-content":h,"mu-auth":S.Provider,"mu-history":j.Provider,"mu-switch":class extends B.Element{constructor(){super(J,"games:history","games:auth")}}});p.initializeOnce();
+        `},{path:"/",redirect:"/app"}];w({"mu-history":B.Provider,"mu-switch":class extends L.Element{constructor(){super(R,"games:history","games:auth")}},"mu-store":class extends A.Provider{constructor(){super(D,N,"games:auth")}},"page-header":l,"session-grid":p,"session-content":h,"mu-auth":I.Provider});v.initializeOnce();
