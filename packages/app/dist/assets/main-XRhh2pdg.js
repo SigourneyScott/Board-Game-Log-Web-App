@@ -1,4 +1,4 @@
-import{a as I,i as d,b as y,e as O,x as n,r as u,O as P,d as w,c as b,n as g,V as S,h as B,s as A,_ as L}from"./reset.css-DCB2plq5.js";const N={};function D(o,e,s){switch(console.log("update called"),o[0]){case"sessions/select":console.log("case 1"),F(o[1],s).then(t=>e(r=>({...r,sessions:t})));break;default:const i=o[0];throw new Error(`Unhandled Auth message "${i}"`)}}function F(o,e){return console.log(o.userid),console.log("test1"),fetch("/api/sessions",{headers:I.headers(e)}).then(s=>{if(console.log("fetched"),s.status===200)return console.log("fetch successful"),s.json();console.log("fetch failed")}).then(s=>{if(s)return console.log("got json"),s})}const H=d`
+import{a as I,i as c,b as y,e as O,x as n,r as p,O as P,d as w,c as b,n as l,V as B,h as A,s as L,_ as N}from"./reset.css-DCB2plq5.js";const D={};function F(r,e,s){switch(console.log("update called"),r[0]){case"sessions/select":H(r[1],s).then(t=>e(o=>({...o,sessions:t})));break;default:const i=r[0];throw new Error(`Unhandled Auth message "${i}"`)}}function H(r,e){return console.log(r.userid),fetch("/api/sessions",{headers:I.headers(e)}).then(s=>{if(s.status===200)return console.log("fetch successful"),s.json()}).then(s=>{if(s)return s})}const U=c`
     h2 {
         margin: 0px;
         margin-bottom: 10px;
@@ -41,7 +41,7 @@ import{a as I,i as d,b as y,e as O,x as n,r as u,O as P,d as w,c as b,n as g,V a
         color: #ffc048;
         position: absolute;
     }
-`,x={styles:H},k=class k extends y{render(){return n`
+`,x={styles:U},C=class C extends y{render(){return n`
             <label
                 @change=${e=>{var s;return O.relay(e,"dark-mode",{checked:(s=e.target)==null?void 0:s.checked})}}
             >
@@ -50,7 +50,7 @@ import{a as I,i as d,b as y,e as O,x as n,r as u,O as P,d as w,c as b,n as g,V a
                     <use href="/icons/menu.svg#icon-dark-mode" />
                 </svg>
             </label>
-        `}static initializeOnce(){function e(s,i){s==null||s.classList.toggle("darkmode",i)}document.body.addEventListener("dark-mode",s=>e(s.currentTarget,s.detail.checked))}};k.styles=[u.styles,d`
+        `}static initializeOnce(){function e(s,i){s==null||s.classList.toggle("darkmode",i)}document.body.addEventListener("dark-mode",s=>e(s.currentTarget,s.detail.checked))}};C.styles=[p.styles,c`
             svg {
                 display: inline;
                 height: 1.5em;
@@ -58,7 +58,7 @@ import{a as I,i as d,b as y,e as O,x as n,r as u,O as P,d as w,c as b,n as g,V a
                 vertical-align: top;
                 fill: currentColor;
             }
-        `];let v=k;var U=Object.defineProperty,j=(o,e,s,i)=>{for(var t=void 0,r=o.length-1,a;r>=0;r--)(a=o[r])&&(t=a(e,s,t)||t);return t&&U(e,s,t),t};const f=class f extends y{constructor(){super(...arguments),this.loggedIn=!1,this._authObserver=new P(this,"games:auth")}render(){return n`
+        `];let v=C;var q=Object.defineProperty,j=(r,e,s,i)=>{for(var t=void 0,o=r.length-1,a;o>=0;o--)(a=r[o])&&(t=a(e,s,t)||t);return t&&q(e,s,t),t};const f=class f extends y{constructor(){super(...arguments),this.loggedIn=!1,this._authObserver=new P(this,"games:auth")}render(){return n`
             <div class="navbar">
                 <h1>
                     <a href="/app">${this.userid}</a>
@@ -83,7 +83,7 @@ import{a as I,i as d,b as y,e as O,x as n,r as u,O as P,d as w,c as b,n as g,V a
             </button>
         `}renderSignInButton(){return n`
             <a @click=${()=>location.assign("/login.html")}>Sign In</a>
-        `}};f.uses=w({"dark-mode-toggle":v}),f.styles=[u.styles,x.styles,d`
+        `}};f.uses=w({"dark-mode-toggle":v}),f.styles=[p.styles,x.styles,c`
             .navbar {
                 background: var(--color-background-card);
                 display: flex;
@@ -93,7 +93,7 @@ import{a as I,i as d,b as y,e as O,x as n,r as u,O as P,d as w,c as b,n as g,V a
                 box-sizing: border-box;
                 flex-basis: auto;
             }
-        `];let l=f;j([b()],l.prototype,"loggedIn");j([b()],l.prototype,"userid");var q=Object.defineProperty,$=(o,e,s,i)=>{for(var t=void 0,r=o.length-1,a;r>=0;r--)(a=o[r])&&(t=a(e,s,t)||t);return t&&q(e,s,t),t};const C=class C extends y{render(){return n`
+        `];let h=f;j([b()],h.prototype,"loggedIn");j([b()],h.prototype,"userid");var J=Object.defineProperty,$=(r,e,s,i)=>{for(var t=void 0,o=r.length-1,a;o>=0;o--)(a=r[o])&&(t=a(e,s,t)||t);return t&&J(e,s,t),t};const _=class _ extends y{render(){return n`
             <a href="/app/sessions/${this.sessionId}">
                 <div class="sessionCard card">
                     <div class="sessionCardImg">
@@ -109,7 +109,7 @@ import{a as I,i as d,b as y,e as O,x as n,r as u,O as P,d as w,c as b,n as g,V a
                     </div>
                 </div>
             </a>
-        `}};C.styles=[u.styles,x.styles,d`
+        `}};_.styles=[p.styles,x.styles,c`
             .sessionCard {
                 height: 300px;
                 font-size: 1.5em;
@@ -139,7 +139,7 @@ import{a as I,i as d,b as y,e as O,x as n,r as u,O as P,d as w,c as b,n as g,V a
                 position: relative;
                 font-family: var(--font-header);
             }
-        `];let c=C;$([g({attribute:"session-id"})],c.prototype,"sessionId");$([g({attribute:"img-src"})],c.prototype,"imgSrc");$([g()],c.prototype,"game");$([g()],c.prototype,"date");var J=Object.defineProperty,K=Object.getOwnPropertyDescriptor,M=(o,e,s,i)=>{for(var t=K(e,s),r=o.length-1,a;r>=0;r--)(a=o[r])&&(t=a(e,s,t)||t);return t&&J(e,s,t),t};const m=class m extends S{get sessions(){return this.model.sessions}constructor(){super("games:model")}render(){const{sessions:e}=this;function s(i){return n`
+        `];let d=_;$([l({attribute:"session-id"})],d.prototype,"sessionId");$([l({attribute:"img-src"})],d.prototype,"imgSrc");$([l()],d.prototype,"game");$([l()],d.prototype,"date");var K=Object.defineProperty,M=Object.getOwnPropertyDescriptor,z=(r,e,s,i)=>{for(var t=i>1?void 0:i?M(e,s):e,o=r.length-1,a;o>=0;o--)(a=r[o])&&(t=(i?a(e,s,t):a(t))||t);return i&&t&&K(e,s,t),t};const m=class m extends B{get sessions(){return this.model.sessions}constructor(){super("games:model")}render(){const{sessions:e}=this;function s(i){return n`
                 <session-tile
                     session-id=${i._id}
                     img-src=${i.imgSrc}
@@ -154,13 +154,13 @@ import{a as I,i as d,b as y,e as O,x as n,r as u,O as P,d as w,c as b,n as g,V a
             <div class="grid">
                 ${e?e.map(s):"no sessions"}
             </div>
-        `}attributeChangedCallback(e,s,i){super.attributeChangedCallback(e,s,i),s!==i&&i&&(console.log("dispatching message"),this.dispatchMessage(["sessions/select",{userid:i}]))}};m.uses=w({"session-tile":c}),m.styles=[u.styles,x.styles,d`
+        `}attributeChangedCallback(e,s,i){super.attributeChangedCallback(e,s,i),e==="user-id"&&s!==i&&i&&(console.log("dispatching message"),this.dispatchMessage(["sessions/select",{userid:i}]))}};m.uses=w({"session-tile":d}),m.styles=[p.styles,x.styles,c`
             .grid {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
                 overflow-y: scroll;
             }
-        `];let p=m;M([b()],p.prototype,"sessions");var Q=Object.defineProperty,z=(o,e,s,i)=>{for(var t=void 0,r=o.length-1,a;r>=0;r--)(a=o[r])&&(t=a(e,s,t)||t);return t&&Q(e,s,t),t};const _=class _ extends y{constructor(){super(...arguments),this.sessionid="",this._authObserver=new P(this,"games:auth")}get src(){if(this.sessionid)return`/api/sessions/${this.sessionid}`}render(){const{session:e}=this;function s(t){return n`
+        `];let u=m;z([l({attribute:"user-id"})],u.prototype,"userid",2);z([b()],u.prototype,"sessions",1);var Q=Object.defineProperty,S=(r,e,s,i)=>{for(var t=void 0,o=r.length-1,a;o>=0;o--)(a=r[o])&&(t=a(e,s,t)||t);return t&&Q(e,s,t),t};const k=class k extends y{constructor(){super(...arguments),this.sessionid="",this._authObserver=new P(this,"games:auth")}get src(){if(this.sessionid)return`/api/sessions/${this.sessionid}`}render(){const{session:e}=this;function s(t){return n`
                 <div class="team card">
                     <h2>
                         ${t.winner?n`
@@ -195,7 +195,7 @@ import{a as I,i as d,b as y,e as O,x as n,r as u,O as P,d as w,c as b,n as g,V a
                     </div>
                 </div>
             </div>
-        `}connectedCallback(){super.connectedCallback(),this._authObserver.observe(e=>{this._user=e.user,this.src&&this.hydrate(this.src)})}get authorization(){return this._user&&this._user.authenticated?(console.log("authenticated"),{Authorization:`Bearer ${this._user.token}`}):(console.log("failed authentication"),{})}hydrate(e){fetch(e,{headers:this.authorization}).then(s=>{if(s.status!==200)throw`Status: ${s.status}`;return s.json()}).then(s=>{console.log(s);const i=s;this.session=i}).catch(s=>console.log(`Failed to render data ${e}:`,s))}};_.styles=[u.styles,x.styles,d`
+        `}connectedCallback(){super.connectedCallback(),this._authObserver.observe(e=>{this._user=e.user,this.src&&this.hydrate(this.src)})}get authorization(){return this._user&&this._user.authenticated?(console.log("authenticated"),{Authorization:`Bearer ${this._user.token}`}):(console.log("failed authentication"),{})}hydrate(e){fetch(e,{headers:this.authorization}).then(s=>{if(s.status!==200)throw`Status: ${s.status}`;return s.json()}).then(s=>{console.log(s);const i=s;this.session=i}).catch(s=>console.log(`Failed to render data ${e}:`,s))}};k.styles=[p.styles,x.styles,c`
             .sessionContent {
                 display: flex;
                 justify-content: space-between;
@@ -249,8 +249,8 @@ import{a as I,i as d,b as y,e as O,x as n,r as u,O as P,d as w,c as b,n as g,V a
             .notes {
                 flex-basis: 100%;
             }
-        `];let h=_;z([g({attribute:"session-id"})],h.prototype,"sessionid");z([b()],h.prototype,"session");const R=[{path:"/app/sessions/:id",view:o=>n`
-            <session-content session-id=${o.id}></session-content>
+        `];let g=k;S([l({attribute:"session-id"})],g.prototype,"sessionid");S([b()],g.prototype,"session");const R=[{path:"/app/sessions/:id",view:r=>n`
+            <session-content session-id=${r.id}></session-content>
         `},{path:"/app",view:()=>n`
-            <session-grid></sesssion-grid>
-        `},{path:"/",redirect:"/app"}];w({"mu-history":B.Provider,"mu-switch":class extends L.Element{constructor(){super(R,"games:history","games:auth")}},"mu-store":class extends A.Provider{constructor(){super(D,N,"games:auth")}},"page-header":l,"session-grid":p,"session-content":h,"mu-auth":I.Provider});v.initializeOnce();
+            <session-grid user-id=1></sesssion-grid>
+        `},{path:"/",redirect:"/app"}];w({"mu-history":A.Provider,"mu-switch":class extends N.Element{constructor(){super(R,"games:history","games:auth")}},"mu-store":class extends L.Provider{constructor(){super(F,D,"games:auth")}},"page-header":h,"session-grid":u,"session-content":g,"mu-auth":I.Provider});v.initializeOnce();

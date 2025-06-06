@@ -11,7 +11,6 @@ export default function update(
     console.log("update called")
     switch (message[0]) {
         case "sessions/select":
-            console.log("case 1")
             loadSessions(message[1], user)
             .then((sessions) =>
                 apply((model) =>
@@ -31,23 +30,19 @@ function loadSessions(
     user: Auth.User
 ) {
     console.log(payload.userid);
-    console.log("test1");
     return fetch(
         '/api/sessions',
         { headers: Auth.headers(user) }
     )
         .then((res: Response) => {
-            console.log("fetched");
             if (res.status === 200) {
                 console.log("fetch successful");
                 return res.json();
             }
-            console.log("fetch failed")
             return undefined;
         })
         .then((json: unknown) => {
             if (json) {
-                console.log("got json");
                 return json as Array<Session>;
             }
         });

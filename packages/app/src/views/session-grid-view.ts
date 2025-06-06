@@ -1,5 +1,5 @@
 import { html, css } from "lit";
-import { state } from "lit/decorators.js";
+import { state, property } from "lit/decorators.js";
 import { define, View } from "@calpoly/mustang";
 //import { Session } from "../models/session.ts"
 import { Session } from "server/models"
@@ -13,6 +13,9 @@ export class SessionGridView extends View<Model, Msg> {
     static uses = define({
         "session-tile": SessionTileElement
     })
+
+    @property({ attribute: "user-id" })
+    userid?: string;
 
     @state()
     get sessions(): Array<Session> | undefined {
@@ -118,7 +121,7 @@ export class SessionGridView extends View<Model, Msg> {
     ) {
         super.attributeChangedCallback(name, oldValue, newValue);
         if (
-            //name === "user-id" &&
+            name === "user-id" &&
             oldValue !== newValue &&
             newValue
         ) {

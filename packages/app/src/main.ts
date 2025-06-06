@@ -18,7 +18,7 @@ const routes = [
     {
         path: "/app",
         view: () => html`
-            <session-grid></sesssion-grid>
+            <session-grid user-id=1></sesssion-grid>
         `
     },
     {
