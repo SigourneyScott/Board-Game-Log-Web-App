@@ -7,7 +7,17 @@
     "dev": "npx vite",
     "build": "npx tsc && npx vite build"
   },
+  "keywords": [
+    "typescript",
+    "lit",
+    "vite"
+  ],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@calpoly/mustang": "file:../mustang",
+    "lit": "^3.2.1",
+    "server": "^1.0.0"
+  }
 }

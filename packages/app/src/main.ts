@@ -1,8 +1,9 @@
-import { Auth, History, Switch, Store, define } from "@calpoly/mustang";
+import { Auth, History, Switch, define } from "@calpoly/mustang";
+//import { Auth, History, Switch, Store, define } from "@calpoly/mustang";
 import { html } from "lit";
-import { Msg } from "./messages";
-import { Model, init } from "./model";
-import update from "./update";
+//import { Msg } from "./messages";
+//import { Model, init } from "./model";
+//import update from "./update";
 import { HeaderElement } from "./components/header.ts"
 import { SessionGridView } from "./views/session-grid-view.ts"
 import { SessionView } from "./views/session-view.ts"
@@ -38,13 +39,13 @@ define({
             super(routes, "games:history", "games:auth");
         }
     },
-    "mu-store": class AppStore
-        extends Store.Provider<Model, Msg>
-    {
-        constructor() {
-            super(update, init, "blazing:auth");
-        }
-    },
+    //"mu-store": class AppStore
+    //    extends Store.Provider<Model, Msg>
+    //{
+    //    constructor() {
+    //        super(update, init, "blazing:auth");
+    //    }
+    //},
 });
 
 DarkModeToggleElement.initializeOnce();

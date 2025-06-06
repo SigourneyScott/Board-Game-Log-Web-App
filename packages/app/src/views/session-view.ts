@@ -1,6 +1,6 @@
 import { html, css, LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
-import { define, Auth, Observer } from "@calpoly/mustang";
+import { Auth, Observer } from "@calpoly/mustang";
 import { Session } from "../models/session.ts";
 import { Team } from "../models/team.ts";
 import reset from "../styles/reset.css.ts";
