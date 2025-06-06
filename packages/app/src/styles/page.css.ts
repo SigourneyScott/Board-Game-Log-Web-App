@@ -41,7 +41,6 @@ const styles = css`
 
     .trophy.icon {
         color: #ffc048;
-        position: absolute;
     }
 `;
 
