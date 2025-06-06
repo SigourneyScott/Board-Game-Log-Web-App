@@ -26,17 +26,25 @@ export class SessionView extends LitElement {
         function renderTeamCard(t: Team) {
             return html`
                 <div class="team card">
-                    <h2>
+                    <div class="teamName">
                         ${t.winner ? html`
-                            <svg class="icon trophy" style = "left: 0;">
-                                <use href="/icons/menu.svg#icon-crown"/>
-                            </svg>
-                            <svg class="icon trophy" style = "right: 0;">
-                                <use href="/icons/menu.svg#icon-crown"/>
-                            </svg>
+                            <h2>
+                                <svg class="icon trophy">
+                                    <use href="/icons/menu.svg#icon-crown"/>
+                                </svg>
+                            </h2>
                         ` : ""}
-                        ${t.name}
-                    </h2>
+                        <h2>
+                            ${t.name}
+                        </h2>
+                        ${t.winner ? html`
+                            <h2>
+                                <svg class="icon trophy">
+                                    <use href="/icons/menu.svg#icon-crown"/>
+                                </svg>
+                            </h2>
+                        ` : ""}
+                    </div>
                     ${t.playerNames.map(renderPlayer)}
                 </div>
             `
@@ -126,6 +134,11 @@ export class SessionView extends LitElement {
 
             .notes {
                 flex-basis: 100%;
+            }
+
+            .teamName {
+                display: flex;
+                justify-content: space-between;
             }
         `
     ]

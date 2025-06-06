@@ -1,4 +1,4 @@
-import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_ as B}from"./reset.css-DrUu50tp.js";const A=c`
+import{i as c,a as u,e as O,x as n,r as g,O as w,d as k,b,n as v,h as P,c as S,_ as B}from"./reset.css-DrUu50tp.js";const N=c`
     h2 {
         margin: 0px;
         margin-bottom: 10px;
@@ -39,18 +39,17 @@ import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_
 
     .trophy.icon {
         color: #ffc048;
-        position: absolute;
     }
-`,x={styles:A},_=class _ extends u{render(){return o`
+`,x={styles:N},_=class _ extends u{render(){return n`
             <label
-                @change=${e=>{var s;return O.relay(e,"dark-mode",{checked:(s=e.target)==null?void 0:s.checked})}}
+                @change=${s=>{var e;return O.relay(s,"dark-mode",{checked:(e=s.target)==null?void 0:e.checked})}}
             >
                 <input type="checkbox" autocomplete="off" style="visibility: hidden"/>
                 <svg>
                     <use href="/icons/menu.svg#icon-dark-mode" />
                 </svg>
             </label>
-        `}static initializeOnce(){function e(s,i){s==null||s.classList.toggle("darkmode",i)}document.body.addEventListener("dark-mode",s=>e(s.currentTarget,s.detail.checked))}};_.styles=[g.styles,c`
+        `}static initializeOnce(){function s(e,i){e==null||e.classList.toggle("darkmode",i)}document.body.addEventListener("dark-mode",e=>s(e.currentTarget,e.detail.checked))}};_.styles=[g.styles,c`
             svg {
                 display: inline;
                 height: 1.5em;
@@ -58,7 +57,7 @@ import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_
                 vertical-align: top;
                 fill: currentColor;
             }
-        `];let p=_;var F=Object.defineProperty,z=(n,e,s,i)=>{for(var t=void 0,r=n.length-1,a;r>=0;r--)(a=n[r])&&(t=a(e,s,t)||t);return t&&F(e,s,t),t};const m=class m extends u{constructor(){super(...arguments),this.loggedIn=!1,this._authObserver=new w(this,"games:auth")}render(){return o`
+        `];let p=_;var A=Object.defineProperty,j=(a,s,e,i)=>{for(var t=void 0,r=a.length-1,o;r>=0;r--)(o=a[r])&&(t=o(s,e,t)||t);return t&&A(s,e,t),t};const m=class m extends u{constructor(){super(...arguments),this.loggedIn=!1,this._authObserver=new w(this,"games:auth")}render(){return n`
             <div class="navbar">
                 <h1>
                     <a href="/app">${this.userid}</a>
@@ -75,13 +74,13 @@ import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_
                     </svg>
                 </h1>
             </div>
-        `}connectedCallback(){super.connectedCallback(),this._authObserver.observe(e=>{const{user:s}=e;s&&s.authenticated?(this.loggedIn=!0,this.userid=s.username):(this.loggedIn=!1,this.userid=void 0)})}renderSignOutButton(){return o`
+        `}connectedCallback(){super.connectedCallback(),this._authObserver.observe(s=>{const{user:e}=s;e&&e.authenticated?(this.loggedIn=!0,this.userid=e.username):(this.loggedIn=!1,this.userid=void 0)})}renderSignOutButton(){return n`
             <button
-                @click=${e=>{O.relay(e,"auth:message",["auth/signout"])}}
+                @click=${s=>{O.relay(s,"auth:message",["auth/signout"])}}
             >
                 Sign Out
             </button>
-        `}renderSignInButton(){return o`
+        `}renderSignInButton(){return n`
             <a @click=${()=>location.assign("/login.html")}>Sign In</a>
         `}};m.uses=k({"dark-mode-toggle":p}),m.styles=[g.styles,x.styles,c`
             .navbar {
@@ -93,7 +92,7 @@ import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_
                 box-sizing: border-box;
                 flex-basis: auto;
             }
-        `];let l=m;z([b()],l.prototype,"loggedIn");z([b()],l.prototype,"userid");var L=Object.defineProperty,$=(n,e,s,i)=>{for(var t=void 0,r=n.length-1,a;r>=0;r--)(a=n[r])&&(t=a(e,s,t)||t);return t&&L(e,s,t),t};const C=class C extends u{render(){return o`
+        `];let l=m;j([b()],l.prototype,"loggedIn");j([b()],l.prototype,"userid");var F=Object.defineProperty,$=(a,s,e,i)=>{for(var t=void 0,r=a.length-1,o;r>=0;r--)(o=a[r])&&(t=o(s,e,t)||t);return t&&F(s,e,t),t};const C=class C extends u{render(){return n`
             <a href="/app/sessions/${this.sessionId}">
                 <div class="sessionCard card">
                     <div class="sessionCardImg">
@@ -139,54 +138,62 @@ import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_
                 position: relative;
                 font-family: var(--font-header);
             }
-        `];let d=C;$([v({attribute:"session-id"})],d.prototype,"sessionId");$([v({attribute:"img-src"})],d.prototype,"imgSrc");$([v()],d.prototype,"game");$([v()],d.prototype,"date");var N=Object.defineProperty,H=(n,e,s,i)=>{for(var t=void 0,r=n.length-1,a;r>=0;r--)(a=n[r])&&(t=a(e,s,t)||t);return t&&N(e,s,t),t};const y=class y extends u{constructor(){super(...arguments),this.sessions=[],this._authObserver=new w(this,"games:auth")}get src(){return"/api/sessions"}render(){const{sessions:e}=this;function s(i){return o`
+        `];let d=C;$([v({attribute:"session-id"})],d.prototype,"sessionId");$([v({attribute:"img-src"})],d.prototype,"imgSrc");$([v()],d.prototype,"game");$([v()],d.prototype,"date");var L=Object.defineProperty,H=(a,s,e,i)=>{for(var t=void 0,r=a.length-1,o;r>=0;r--)(o=a[r])&&(t=o(s,e,t)||t);return t&&L(s,e,t),t};const y=class y extends u{constructor(){super(...arguments),this.sessions=[],this._authObserver=new w(this,"games:auth")}get src(){return"/api/sessions"}render(){const{sessions:s}=this;function e(i){return n`
                 <session-tile
                     session-id=${i._id}
                     img-src=${i.imgSrc}
                     game=${i.game}
                     date=${i.date}>
-                    ${i.sym?o`
+                    ${i.sym?n`
                         <svg class="icon trophy" slot="icon">
                             <use href="/icons/menu.svg#icon-crown"/>
                         </svg>
                     `:""}
-                </session-tile>`}return o`
+                </session-tile>`}return n`
             <div class="grid">
-                ${e.map(s)}
+                ${s.map(e)}
             </div>
-        `}connectedCallback(){super.connectedCallback(),this._authObserver.observe(e=>{this._user=e.user,this.src&&this.hydrate(this.src)})}get authorization(){return this._user&&this._user.authenticated?(console.log("authenticated"),{Authorization:`Bearer ${this._user.token}`}):(console.log("failed authentication"),{})}hydrate(e){fetch(e,{headers:this.authorization}).then(s=>{if(s.status!==200)throw`Status: ${s.status}`;return s.json()}).then(s=>{console.log(s);const i=s;this.sessions=i}).catch(s=>console.log(`Failed to render data ${e}:`,s))}};y.uses=k({"session-tile":d}),y.styles=[g.styles,x.styles,c`
+        `}connectedCallback(){super.connectedCallback(),this._authObserver.observe(s=>{this._user=s.user,this.src&&this.hydrate(this.src)})}get authorization(){return this._user&&this._user.authenticated?(console.log("authenticated"),{Authorization:`Bearer ${this._user.token}`}):(console.log("failed authentication"),{})}hydrate(s){fetch(s,{headers:this.authorization}).then(e=>{if(e.status!==200)throw`Status: ${e.status}`;return e.json()}).then(e=>{console.log(e);const i=e;this.sessions=i}).catch(e=>console.log(`Failed to render data ${s}:`,e))}};y.uses=k({"session-tile":d}),y.styles=[g.styles,x.styles,c`
             .grid {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
                 overflow-y: scroll;
             }
-        `];let f=y;H([b()],f.prototype,"sessions");var q=Object.defineProperty,P=(n,e,s,i)=>{for(var t=void 0,r=n.length-1,a;r>=0;r--)(a=n[r])&&(t=a(e,s,t)||t);return t&&q(e,s,t),t};const I=class I extends u{constructor(){super(...arguments),this.sessionid="",this._authObserver=new w(this,"games:auth")}get src(){if(this.sessionid)return`/api/sessions/${this.sessionid}`}render(){const{session:e}=this;function s(t){return o`
+        `];let f=y;H([b()],f.prototype,"sessions");var q=Object.defineProperty,z=(a,s,e,i)=>{for(var t=void 0,r=a.length-1,o;r>=0;r--)(o=a[r])&&(t=o(s,e,t)||t);return t&&q(s,e,t),t};const I=class I extends u{constructor(){super(...arguments),this.sessionid="",this._authObserver=new w(this,"games:auth")}get src(){if(this.sessionid)return`/api/sessions/${this.sessionid}`}render(){const{session:s}=this;function e(t){return n`
                 <div class="team card">
-                    <h2>
-                        ${t.winner?o`
-                            <svg class="icon trophy" style = "left: 0;">
-                                <use href="/icons/menu.svg#icon-crown"/>
-                            </svg>
-                            <svg class="icon trophy" style = "right: 0;">
-                                <use href="/icons/menu.svg#icon-crown"/>
-                            </svg>
+                    <div class="teamName">
+                        ${t.winner?n`
+                            <h2>
+                                <svg class="icon trophy">
+                                    <use href="/icons/menu.svg#icon-crown"/>
+                                </svg>
+                            </h2>
                         `:""}
-                        ${t.name}
-                    </h2>
+                        <h2>
+                            ${t.name}
+                        </h2>
+                        ${t.winner?n`
+                            <h2>
+                                <svg class="icon trophy">
+                                    <use href="/icons/menu.svg#icon-crown"/>
+                                </svg>
+                            </h2>
+                        `:""}
+                    </div>
                     ${t.playerNames.map(i)}
                 </div>
-            `}function i(t){return o`<div class="player">${t}</div>`}return o`
+            `}function i(t){return n`<div class="player">${t}</div>`}return n`
             <div class="sessionContent">
                 <div class="gameInfo card">
                     <div class="gameHeader">
-                        <h1>${e?e.game:""}</h1>
-                        <h1>${e?e.date:""}</h1>
+                        <h1>${s?s.game:""}</h1>
+                        <h1>${s?s.date:""}</h1>
                     </div>
-                    <div class="gameImg"><img src=${e?e.imgSrc:""}/></div>
+                    <div class="gameImg"><img src=${s?s.imgSrc:""}/></div>
                 </div>
                 <div class="details">
                         <div class="teamInfo">
-                            ${e?e.teams.map(s):""}
+                            ${s?s.teams.map(e):""}
                         </div>
 
                         <div class="notes card">
@@ -195,7 +202,7 @@ import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_
                     </div>
                 </div>
             </div>
-        `}connectedCallback(){super.connectedCallback(),this._authObserver.observe(e=>{this._user=e.user,this.src&&this.hydrate(this.src)})}get authorization(){return this._user&&this._user.authenticated?(console.log("authenticated"),{Authorization:`Bearer ${this._user.token}`}):(console.log("failed authentication"),{})}hydrate(e){fetch(e,{headers:this.authorization}).then(s=>{if(s.status!==200)throw`Status: ${s.status}`;return s.json()}).then(s=>{console.log(s);const i=s;this.session=i}).catch(s=>console.log(`Failed to render data ${e}:`,s))}};I.styles=[g.styles,x.styles,c`
+        `}connectedCallback(){super.connectedCallback(),this._authObserver.observe(s=>{this._user=s.user,this.src&&this.hydrate(this.src)})}get authorization(){return this._user&&this._user.authenticated?(console.log("authenticated"),{Authorization:`Bearer ${this._user.token}`}):(console.log("failed authentication"),{})}hydrate(s){fetch(s,{headers:this.authorization}).then(e=>{if(e.status!==200)throw`Status: ${e.status}`;return e.json()}).then(e=>{console.log(e);const i=e;this.session=i}).catch(e=>console.log(`Failed to render data ${s}:`,e))}};I.styles=[g.styles,x.styles,c`
             .sessionContent {
                 display: flex;
                 justify-content: space-between;
@@ -249,8 +256,13 @@ import{i as c,a as u,e as O,x as o,r as g,O as w,d as k,b,n as v,h as j,c as S,_
             .notes {
                 flex-basis: 100%;
             }
-        `];let h=I;P([v({attribute:"session-id"})],h.prototype,"sessionid");P([b()],h.prototype,"session");const J=[{path:"/app/sessions/:id",view:n=>o`
-            <session-content session-id=${n.id}></session-content>
-        `},{path:"/app",view:()=>o`
+
+            .teamName {
+                display: flex;
+                justify-content: space-between;
+            }
+        `];let h=I;z([v({attribute:"session-id"})],h.prototype,"sessionid");z([b()],h.prototype,"session");const J=[{path:"/app/sessions/:id",view:a=>n`
+            <session-content session-id=${a.id}></session-content>
+        `},{path:"/app",view:()=>n`
             <session-grid></sesssion-grid>
-        `},{path:"/",redirect:"/app"}];k({"page-header":l,"session-grid":f,"session-content":h,"mu-auth":S.Provider,"mu-history":j.Provider,"mu-switch":class extends B.Element{constructor(){super(J,"games:history","games:auth")}}});p.initializeOnce();
+        `},{path:"/",redirect:"/app"}];k({"page-header":l,"session-grid":f,"session-content":h,"mu-auth":S.Provider,"mu-history":P.Provider,"mu-switch":class extends B.Element{constructor(){super(J,"games:history","games:auth")}}});p.initializeOnce();
