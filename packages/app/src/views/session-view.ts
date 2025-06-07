@@ -1,23 +1,31 @@
-import { html, css, LitElement } from "lit";
+import { html, css } from "lit";
 import { property, state } from "lit/decorators.js";
-import { Auth, Observer } from "@calpoly/mustang";
+import { View } from "@calpoly/mustang";
 import { Session } from "../models/session.ts";
 import { Team } from "../models/team.ts";
 import reset from "../styles/reset.css.ts";
 import page from "../styles/page.css.ts";
+import { Msg } from "../messages";
+import { Model } from "../model";
 
-export class SessionView extends LitElement {
+export class SessionView extends View<Model, Msg> {
 
     @property({ attribute: "session-id" })
-    sessionid = "";
+    sessionid?: string;
 
     @state()
-    session?: Session;
+    get session(): Session | undefined {
+        return this.model.session
+    }
 
-    get src(): string | undefined {
-        if (this.sessionid) {
-            return `/api/sessions/${this.sessionid}`;
-        }
+    //get src(): string | undefined {
+    //    if (this.sessionid) {
+    //        return `/api/sessions/${this.sessionid}`;
+    //    }
+    //}
+
+    constructor() {
+        super("games:model");
     }
 
     render() {
@@ -143,47 +151,65 @@ export class SessionView extends LitElement {
         `
     ]
 
-    _authObserver = new Observer<Auth.Model>(this, "games:auth");
-    _user?: Auth.User;
+    //_authObserver = new Observer<Auth.Model>(this, "games:auth");
+    //_user?: Auth.User;
 
-    connectedCallback() {
-        super.connectedCallback();
-        this._authObserver.observe((auth: Auth.Model) => {
-            this._user = auth.user;
-            if (this.src) this.hydrate(this.src);
-        });
-    }
+    //connectedCallback() {
+    //    super.connectedCallback();
+    //    this._authObserver.observe((auth: Auth.Model) => {
+    //        this._user = auth.user;
+    //        if (this.src) this.hydrate(this.src);
+    //    });
+    //}
 
-    get authorization(): { Authorization?: string } {
-        if (this._user && this._user.authenticated) {
-            console.log("authenticated");
-            return {
-                Authorization:
-                    `Bearer ${(this._user as Auth.AuthenticatedUser).token}`
-            };
+    //get authorization(): { Authorization?: string } {
+    //    if (this._user && this._user.authenticated) {
+    //        console.log("authenticated");
+    //        return {
+    //            Authorization:
+    //                `Bearer ${(this._user as Auth.AuthenticatedUser).token}`
+    //        };
+    //    }
+    //    else {
+    //        console.log("failed authentication");
+    //        return {};
+    //    }
+    //}
+
+    //hydrate(url: string) {
+    //    fetch(
+    //        url,
+    //        { headers: this.authorization }
+    //    )
+    //        .then((res: Response) => {
+    //            if (res.status !== 200) throw `Status: ${res.status}`;
+    //            return res.json();
+    //        })
+    //        .then((json: unknown) => {
+    //            console.log(json);
+    //            const session = json as Session;
+    //            this.session = session;
+    //        })
+    //        .catch((error) =>
+    //            console.log(`Failed to render data ${url}:`, error)
+    //        );
+    //}
+
+    attributeChangedCallback(
+        name: string,
+        oldValue: string,
+        newValue: string
+    ) {
+        super.attributeChangedCallback(name, oldValue, newValue);
+        if (
+            name === "session-id" &&
+            oldValue !== newValue &&
+            newValue
+        ) {
+            this.dispatchMessage([
+                "session/select",
+                { sessionid: newValue }
+            ]);
         }
-        else {
-            console.log("failed authentication");
-            return {};
-        }
-    }
-
-    hydrate(url: string) {
-        fetch(
-            url,
-            { headers: this.authorization }
-        )
-            .then((res: Response) => {
-                if (res.status !== 200) throw `Status: ${res.status}`;
-                return res.json();
-            })
-            .then((json: unknown) => {
-                console.log(json);
-                const session = json as Session;
-                this.session = session;
-            })
-            .catch((error) =>
-                console.log(`Failed to render data ${url}:`, error)
-            );
     }
 }

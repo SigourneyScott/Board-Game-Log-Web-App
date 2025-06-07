@@ -18,7 +18,14 @@ export default function update(
                 )
             );
             break;
-        // put the rest of your cases here
+        case "session/select":
+            loadSession(message[1], user)
+                .then((session) =>
+                    apply((model) =>
+                        ({ ...model, session })
+                    )
+                );
+            break;
         default:
             const unhandled: never = message[0];
             throw new Error(`Unhandled Auth message "${unhandled}"`);
@@ -29,14 +36,13 @@ function loadSessions(
     payload: { userid: string },
     user: Auth.User
 ) {
-    console.log(payload.userid);
+    console.log(payload.userid)
     return fetch(
-        '/api/sessions',
+        `/api/sessions`,
         { headers: Auth.headers(user) }
     )
         .then((res: Response) => {
             if (res.status === 200) {
-                console.log("fetch successful");
                 return res.json();
             }
             return undefined;
@@ -47,3 +53,25 @@ function loadSessions(
             }
         });
 }
+
+function loadSession(
+    payload: { sessionid: string },
+    user: Auth.User
+) {
+    return fetch(
+        `/api/sessions/${payload.sessionid}`,
+        { headers: Auth.headers(user) }
+    )
+        .then((res: Response) => {
+            if (res.status === 200) {
+                return res.json();
+            }
+            return undefined;
+        })
+        .then((json: unknown) => {
+            if (json) {
+                return json as Session;
+            }
+        });
+}
+

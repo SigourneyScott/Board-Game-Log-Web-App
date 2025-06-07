@@ -31,12 +31,6 @@ export class HeaderElement extends LitElement {
                 </h1>
                 <h1>
                     <dark-mode-toggle></dark-mode-toggle>
-                    <svg class="icon">
-                        <use href="/icons/menu.svg#icon-list" />
-                    </svg>
-                    <svg class="icon">
-                        <use href="/icons/menu.svg#icon-grid" />
-                    </svg>
                 </h1>
             </div>
         `;
