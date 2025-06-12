@@ -7,8 +7,16 @@ import { HeaderElement } from "./components/header.ts"
 import { SessionGridView } from "./views/session-grid-view.ts"
 import { SessionView } from "./views/session-view.ts"
 import { DarkModeToggleElement } from "./components/darkmodeToggle.ts"
+import { CreateSessionButtonElement } from "./components/create-session-button.ts"
+import { SessionEditElement } from "./components/session-edit.ts"
 
 const routes = [
+    {
+        path: "/app/sessions/edit",
+        view: () => html`
+            <session-edit></session-edit>
+        `
+    },
     {
         path: "/app/sessions/:id",
         view: (params: Switch.Params) => html`
@@ -28,6 +36,7 @@ const routes = [
 ];
 
 define({
+    "mu-auth": Auth.Provider,
     "mu-history": History.Provider,
     "mu-switch": class AppSwitch extends Switch.Element {
         constructor() {
@@ -44,7 +53,8 @@ define({
     "page-header": HeaderElement,
     "session-grid": SessionGridView,
     "session-content": SessionView,
-    "mu-auth": Auth.Provider,
+    "create-session-button": CreateSessionButtonElement,
+    "session-edit": SessionEditElement,
 });
 
 DarkModeToggleElement.initializeOnce();
