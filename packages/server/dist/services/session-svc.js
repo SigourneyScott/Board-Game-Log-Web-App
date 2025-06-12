@@ -28,7 +28,14 @@ const SessionSchema = new import_mongoose.Schema(
     imgSrc: { type: String, required: true, trim: true },
     game: { type: String, required: true, trim: true },
     date: { type: String, required: true, trim: true },
-    sym: { type: Boolean, required: true }
+    sym: { type: Boolean, required: true },
+    teams: [
+      {
+        name: String,
+        playerNames: [String],
+        winner: Boolean
+      }
+    ]
   },
   { collection: "sessions" }
 );
